@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.env
+.env.*.local
+.superpowers/
+server/.cache/
+*.log
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+coverage/
+docs/superpowers/

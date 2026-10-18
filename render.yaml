@@ -1,0 +1,21 @@
+# Render Blueprint: New → Blueprint → pick this repo. Free plan sleeps after ~15 min idle (30–60 s cold start).
+services:
+  - type: web
+    name: crm-contacts-api
+    runtime: node
+    plan: free
+    rootDir: server
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "22" # current LTS (Node 20 reached end-of-life in April 2026)
+      - key: MONGOMS_DISABLE_POSTINSTALL
+        value: "1" # skip the ~100 MB test-only MongoDB binary download during npm ci
+      - key: MONGODB_URI
+        sync: false # paste the Atlas connection string in the Render dashboard
+      - key: CORS_ORIGIN
+        sync: false # the Netlify URL, e.g. https://your-site.netlify.app
+      - key: DEFAULT_ACCOUNT_ID
+        value: 6650a0000000000000000001
