@@ -19,7 +19,9 @@ npm run build        # production build into dist/
 
 | Variable | Default | Meaning |
 |---|---|---|
-| `VITE_API_URL` | `http://localhost:4000` (in `.env.development`) | Backend base URL, no trailing slash. On Netlify, set it to the Render URL. |
+| `VITE_API_URL` | `http://localhost:4000` (in `.env.development`) | Backend base URL, no trailing slash. In production (Netlify) it's `https://crm-contacts-api.onrender.com`. |
+
+On Render's free tier the API sleeps when idle. The first request after a pause can take 30–60 seconds, and the app shows a "Waking up the server" banner until it answers.
 
 ## Tests
 

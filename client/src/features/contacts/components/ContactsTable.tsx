@@ -36,7 +36,7 @@ export function ContactsTable({ contacts, hrefFor, selection }: ContactsTablePro
           <th scope="col" className={cn(th, 'hidden w-[16%] lg:table-cell')}>Company</th>
           <th scope="col" className={cn(th, 'hidden w-[15%] xl:table-cell')}>Phone</th>
           <th scope="col" className={cn(th, 'w-[22%]')}>Tags</th>
-          <th scope="col" className={cn(th, 'w-28')}>Created</th>
+          <th scope="col" className={cn(th, 'w-32')}>Created</th>
         </tr>
       </thead>
       <tbody className="divide-y divide-slate-100">
@@ -58,7 +58,7 @@ export function ContactsTable({ contacts, hrefFor, selection }: ContactsTablePro
               <td className={td}>
                 <TagList tags={c.tags} max={2} />
               </td>
-              <td className={cn(td, 'text-slate-600 tabular-nums')}>
+              <td className={cn(td, 'whitespace-nowrap text-slate-600 tabular-nums')}>
                 <time dateTime={c.createdAt} title={formatDateTime(c.createdAt)}>
                   {formatDate(c.createdAt)}
                 </time>
